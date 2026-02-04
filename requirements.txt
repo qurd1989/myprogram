@@ -1,0 +1,4 @@
+# Core dependencies
+click>=8.0.0
+
+# Development dependencies (install with: pip install -r requirements-dev.txt)

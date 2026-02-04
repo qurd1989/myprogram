@@ -4,6 +4,8 @@ Daily Programming Exercise
 A simple program to practice coding daily
 """
 
+from datetime import datetime
+
 
 def main():
     """Main function for daily programming exercises"""
@@ -14,7 +16,6 @@ def main():
 
 def get_current_date():
     """Get the current date in a friendly format"""
-    from datetime import datetime
     return datetime.now().strftime("%Y-%m-%d")
 
 

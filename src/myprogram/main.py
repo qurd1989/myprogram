@@ -7,6 +7,7 @@ This module provides the main entry point and CLI interface for the application.
 
 import click
 from myprogram import __version__
+from myprogram.utils import format_greeting
 
 
 @click.group()
@@ -20,7 +21,7 @@ def cli():
 @click.option('--name', default='World', help='Name to greet')
 def greet(name):
     """Greet someone with a friendly message."""
-    message = f"Hello, {name}! Welcome to MyProgram."
+    message = format_greeting(name)
     click.echo(message)
     return message
 

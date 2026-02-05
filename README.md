@@ -2,16 +2,22 @@
 
 A simple Python application starter template with CLI interface.
 
-## 📚 Learning Resources
+## 📚 New to CLI & Bootstrap Concepts? Start Here!
 
-**New to CLI applications or want to understand this project?** Start here:
+This project includes comprehensive learning guides to help you understand everything!
 
-1. **[CLI_GUIDE.md](CLI_GUIDE.md)** - Understanding Command-Line Interface applications and the Click framework
-2. **[BOOTSTRAP_GUIDE.md](BOOTSTRAP_GUIDE.md)** - Understanding project structure, setup.py, and packaging concepts
-3. **[TUTORIAL.md](TUTORIAL.md)** - Interactive tutorial walking through the code step-by-step
-4. **[GLOSSARY.md](GLOSSARY.md)** - Quick reference for all terms and concepts used
+### 🚀 Quick Start Learning Path
 
-These guides explain everything from scratch - no prior knowledge needed!
+**[→ Read GETTING_STARTED.md first](GETTING_STARTED.md)** - Choose your learning path
+
+Then explore these guides:
+
+1. **[CLI_GUIDE.md](CLI_GUIDE.md)** - What are CLI applications? How does Click work?
+2. **[BOOTSTRAP_GUIDE.md](BOOTSTRAP_GUIDE.md)** - Why this project structure? What is setup.py?
+3. **[TUTORIAL.md](TUTORIAL.md)** - Interactive code walkthrough with exercises
+4. **[GLOSSARY.md](GLOSSARY.md)** - Quick reference for all terms
+
+**No prior knowledge needed!** Everything is explained from scratch with examples and hands-on exercises.
 
 ---
 

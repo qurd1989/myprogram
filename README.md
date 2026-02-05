@@ -2,6 +2,19 @@
 
 A simple Python application starter template with CLI interface.
 
+## 📚 Learning Resources
+
+**New to CLI applications or want to understand this project?** Start here:
+
+1. **[CLI_GUIDE.md](CLI_GUIDE.md)** - Understanding Command-Line Interface applications and the Click framework
+2. **[BOOTSTRAP_GUIDE.md](BOOTSTRAP_GUIDE.md)** - Understanding project structure, setup.py, and packaging concepts
+3. **[TUTORIAL.md](TUTORIAL.md)** - Interactive tutorial walking through the code step-by-step
+4. **[GLOSSARY.md](GLOSSARY.md)** - Quick reference for all terms and concepts used
+
+These guides explain everything from scratch - no prior knowledge needed!
+
+---
+
 ## Overview
 
 MyProgram is a well-structured Python application template that provides a solid foundation for building command-line applications. It includes:

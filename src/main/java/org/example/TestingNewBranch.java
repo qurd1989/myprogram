@@ -1,6 +1,8 @@
 package org.example;
 
-import jdk.javadoc.internal.doclets.formats.html.markup.Head;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
 
 public class TestingNewBranch {
 

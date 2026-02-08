@@ -1,10 +1,12 @@
 package org.example;
 
+import java.math.BigDecimal;
+
 public class CashCard {
     private Long id;
-    private double balance;
+    private BigDecimal balance;
 
-    public CashCard(Long id, double balance) {
+    public CashCard(Long id, BigDecimal balance) {
         this.id = id;
         this.balance = balance;
     }
@@ -13,7 +15,7 @@ public class CashCard {
         return id;
     }
 
-    public double getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 }

@@ -74,67 +74,69 @@ public class LibrarySystem {
         }
     }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        var library = new java.util.HashMap<String, Book>();
+        try (Scanner sc = new Scanner(System.in)) {
+            ;
+            var library = new java.util.HashMap<String, Book>();
 
-        boolean running = true;
+            boolean running = true;
 
-        while (running) {
-            System.out.println("\n===== Library System Menu =====");
-            System.out.println("1. Add Book");
-            System.out.println("2. Borrow Book");
-            System.out.println("3. Return Book");
-            System.out.println("4. Exit");
-            int choice = readMenuChoice(sc);
-            switch (choice) {
-                case 1 -> {
-                    String title = readNonEmptyString(sc, "Enter book title:");
-                    String author = readNonEmptyString(sc, "Enter book author:");
-                    int quantity = readPositiveInt(sc, "Enter quantity to add:");
+            while (running) {
+                System.out.println("\n===== Library System Menu =====");
+                System.out.println("1. Add Book");
+                System.out.println("2. Borrow Book");
+                System.out.println("3. Return Book");
+                System.out.println("4. Exit");
+                int choice = readMenuChoice(sc);
+                switch (choice) {
+                    case 1 -> {
+                        String title = readNonEmptyString(sc, "Enter book title:");
+                        String author = readNonEmptyString(sc, "Enter book author:");
+                        int quantity = readPositiveInt(sc, "Enter quantity to add:");
 
-                    String key = normalizeTitle(title);
-                    if (library.containsKey(key)) {
-                        library.get(key).addQuantity(quantity);
-                        System.out.println("Updated quantity of existing book.");
-                    } else {
-                        library.put(key, new Book(title, author, quantity));
-                        System.out.println("Added new book to the library.");
-                    }
-                }
-                case 2 -> {
-                    String title = readNonEmptyString(sc, "Enter book title to borrow:");
-                    int borrowQuantity = readPositiveInt(sc, "Enter quantity to borrow:");
-                    String key = normalizeTitle(title);
-                    if (!library.containsKey(key)) {
-                        System.out.println("Error: Book not found in the library.");
-                    } else {
-                        Book book = library.get(key);
-                        if (book.borrowQuantity(borrowQuantity)) {
-                            System.out.println("Successfully borrowed " + borrowQuantity + " copies of \"" + book.getTitle() + "\".");
-                            System.out.println("Remaining quantity: " + book.getQuantity());
+                        String key = normalizeTitle(title);
+                        if (library.containsKey(key)) {
+                            library.get(key).addQuantity(quantity);
+                            System.out.println("Updated quantity of existing book.");
                         } else {
-                            System.out.println("Error: Not enough copies available to borrow. Current quantity: " + book.getQuantity());
+                            library.put(key, new Book(title, author, quantity));
+                            System.out.println("Added new book to the library.");
                         }
                     }
-                }
-                case 3 -> {
-                    String title = readNonEmptyString(sc, "Enter book title to return:");
-                    int returnQuantity = readPositiveInt(sc, "Enter quantity to return:");
-                    String key = normalizeTitle(title);
-                    if (!library.containsKey(key)) {
-                        System.out.println("Error: Book not found in the library.");
-                    } else {
-                        Book book = library.get(key);
-                        book.addQuantity(returnQuantity);
-                        System.out.println("Successfully returned " + returnQuantity + " copies of \"" + book.getTitle() + "\".");
-                        System.out.println("Current quantity: " + book.getQuantity());
+                    case 2 -> {
+                        String title = readNonEmptyString(sc, "Enter book title to borrow:");
+                        int borrowQuantity = readPositiveInt(sc, "Enter quantity to borrow:");
+                        String key = normalizeTitle(title);
+                        if (!library.containsKey(key)) {
+                            System.out.println("Error: Book not found in the library.");
+                        } else {
+                            Book book = library.get(key);
+                            if (book.borrowQuantity(borrowQuantity)) {
+                                System.out.println("Successfully borrowed " + borrowQuantity + " copies of \"" + book.getTitle() + "\".");
+                                System.out.println("Remaining quantity: " + book.getQuantity());
+                            } else {
+                                System.out.println("Error: Not enough copies available to borrow. Current quantity: " + book.getQuantity());
+                            }
+                        }
                     }
+                    case 3 -> {
+                        String title = readNonEmptyString(sc, "Enter book title to return:");
+                        int returnQuantity = readPositiveInt(sc, "Enter quantity to return:");
+                        String key = normalizeTitle(title);
+                        if (!library.containsKey(key)) {
+                            System.out.println("Error: Book not found in the library.");
+                        } else {
+                            Book book = library.get(key);
+                            book.addQuantity(returnQuantity);
+                            System.out.println("Successfully returned " + returnQuantity + " copies of \"" + book.getTitle() + "\".");
+                            System.out.println("Current quantity: " + book.getQuantity());
+                        }
+                    }
+                    case 4 -> {
+                        System.out.println("Exiting the library system. Goodbye!");
+                        running = false;
+                    }
+                    default -> System.out.println("Invalid input. Please try again.");
                 }
-                case 4 -> {
-                    System.out.println("Exiting the library system. Goodbye!");
-                    running = false;
-                }
-                default -> System.out.println("Invalid input. Please try again.");
             }
         }
     }
